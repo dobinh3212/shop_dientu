@@ -1,40 +1,40 @@
-
 @extends('shops.layouts.main')
 
 @section('content')
-    <style>
-        .pricee{
-            font-size: 20px;
-            color: #f60000;
-        }
-     table th.avc{
-            background: #7aff00cf;
-        }
-    </style>
+<style>
+    .pricee {
+        font-size: 20px;
+        color: #f60000;
+    }
 
-    <ul style="margin-left: 105px" class="b-crumbs">
-        <li>
-            <a href="http://http://127.0.0.1:8000/.com/">
-                Trang Chủ
-            </a>
-        </li>
-        <li>
-            <span>Giỏ Hàng</span>
-        </li>
-    </ul>
-    {{--<div class="single-product-area">--}}
-    <div class="container">
+    table th.avc {
+        background: #7aff00cf;
+    }
+</style>
 
-        @if(count($listProducts))
+<ul style="margin-left: 105px" class="b-crumbs">
+    <li>
+        <a href="/">
+            Trang Chủ
+        </a>
+    </li>
+    <li>
+        <span>Giỏ Hàng</span>
+    </li>
+</ul>
+{{--<div class="single-product-area">--}}
+<div class="container">
 
-        <h3 class="component-ttl"><span>GIỎ HÀNG</span></h3>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-content-right">
-                    <div class="woocommerce">
-                        <form method="post" action="#">
-                            <table cellspacing="0" class="shop_table cart">
-                                <thead>
+    @if(count($listProducts))
+
+    <h3 class="component-ttl"><span>GIỎ HÀNG</span></h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="product-content-right">
+                <div class="woocommerce">
+                    <form method="post" action="#">
+                        <table cellspacing="0" class="shop_table cart">
+                            <thead>
                                 <tr>
 
                                     <th class="avc">Ảnh</th>
@@ -44,8 +44,8 @@
                                     <th class="avc">Tổng</th>
                                     <th class="avc">Xóa</th>
                                 </tr>
-                                </thead>
-                                <tbody>
+                            </thead>
+                            <tbody>
                                 @foreach($listProducts as $product)
 
                                 <tr class="cart_item">
@@ -68,11 +68,11 @@
                                             <input type="number" size="4" class="cart-plus-minus" title="Qty" value="{{ $product->qty }}" min="0" step="1">
                                         </div>
                                         <br>
-                                        <button data-id="{{ $product-> rowId  }}" type="button" class="btn btn-success btnUpdateQty" >Cập nhật</button>
+                                        <button data-id="{{ $product-> rowId  }}" type="button" class="btn btn-success btnUpdateQty">Cập nhật</button>
                                     </td>
 
                                     <td class="product-subtotal">
-                                        <span >{{ number_format( $product->qty * $product->price, 0,",",".") }} đ</span>
+                                        <span>{{ number_format( $product->qty * $product->price, 0,",",".") }} đ</span>
                                     </td>
 
                                     <td class="product-remove">
@@ -89,60 +89,60 @@
                                 <tr>
                                     <td class="actions" colspan="6">
                                         <div class="coupon">
-                                            <a href="http://http://127.0.0.1:8000/.com/" type="button" class="btn btn-warning">Tiếp tục mua hàng</a>
+                                            <a href="/" type="button" class="btn btn-warning">Tiếp tục mua hàng</a>
                                         </div>
 
                                         <a href="{{ route('shop.cancelCart') }}" type="button" class="btn btn-danger">Hủy</a>
-                                        <a  href="{{ route('shop.order') }}"type="button" class="btn btn-success">Tiến hành đặt hàng</a>
+                                        <a href="{{ route('shop.order') }}" type="button" class="btn btn-success">Tiến hành đặt hàng</a>
                                     </td>
                                 </tr>
 
-                                </tbody>
-                            </table>
-                        </form>
+                            </tbody>
+                        </table>
+                    </form>
 
-{{--                        <div class="cart-collaterals">--}}
-
-
-
-{{--                            <div class="cart_totals ">--}}
-{{--                                <table cellspacing="0">--}}
-{{--                                    <tbody>--}}
-{{--                                    <tr class="order-total">--}}
-{{--                                        <th>Tổng giỏ hàng</th>--}}
-{{--                                        <td><strong><span class="amount">{{ $totalPrice }} đ</span></strong> </td>--}}
-{{--                                    </tr>--}}
-{{--                                    </tbody>--}}
-{{--                                </table>--}}
-{{--                            </div>--}}
+                    {{-- <div class="cart-collaterals">--}}
 
 
 
-{{--                        </div>--}}
-                    </div>
+                    {{-- <div class="cart_totals ">--}}
+                    {{-- <table cellspacing="0">--}}
+                    {{-- <tbody>--}}
+                    {{-- <tr class="order-total">--}}
+                    {{-- <th>Tổng giỏ hàng</th>--}}
+                    {{-- <td><strong><span class="amount">{{ $totalPrice }} đ</span></strong> </td>--}}
+                    {{-- </tr>--}}
+                    {{-- </tbody>--}}
+                    {{-- </table>--}}
+                    {{-- </div>--}}
+
+
+
+                    {{-- </div>--}}
                 </div>
             </div>
         </div>
-
-        @else
-            <div style="text-align: center" >
-
-                <img src="./uploads/setting/giohang.png">
-                <br>
-                 <br>
-                 <h3> Hiện chưa có sản phẩm nào trong giỏ hàng!</h3>
-            </div>
-        @endif
     </div>
-    <br>
-    <br>
+
+    @else
+    <div style="text-align: center">
+
+        <img src="./uploads/setting/giohang.png">
+        <br>
+        <br>
+        <h3> Hiện chưa có sản phẩm nào trong giỏ hàng!</h3>
+    </div>
+    @endif
+</div>
+<br>
+<br>
 {{--</div>--}}
 @endsection
 
 {{--Cập nhật giỏ hàng--}}
 @section('my_js')
 <script type="text/javascript">
-    $(document).ready(function (){
+    $(document).ready(function() {
 
         //đính kèm token vào nmooxi request ajax
         $.ajaxSetup({
@@ -150,12 +150,12 @@
                 'X-CSRF-TOKEN': $('metan[name="csrf-token"]').attr('content')
             }
         });
-        $('.btnUpdateQty').click(function (){
+        $('.btnUpdateQty').click(function() {
 
-        var qty = $(this).closest('.product-quantity').find('.cart-plus-minus').val();
-        var rowId = $(this).attr('data-id');
+            var qty = $(this).closest('.product-quantity').find('.cart-plus-minus').val();
+            var rowId = $(this).attr('data-id');
 
-        window.location.href = '/cap-nhat-so-luong/'+rowId+ '/' +qty;
+            window.location.href = '/cap-nhat-so-luong/' + rowId + '/' + qty;
 
         });
     });

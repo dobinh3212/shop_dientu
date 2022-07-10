@@ -2,26 +2,27 @@
 
 @section('content')
 
-    <style>
-        .pricee{
-            font-size: 30px;
-            color: #f60000;
-        }
-        .price_sale{
-            width: 388px;
-        }
-    </style>
-    <ul style="margin-left: 105px" class="b-crumbs">
-        <li>
-            <a href="http://http://127.0.0.1:8000/.com/">
-                Trang Chủ
-            </a>
-        </li>
-        <li>
-            <span>Chi tiết sản phẩm</span>
-        </li>
-    </ul>
-    <section class="container">
+<style>
+    .pricee {
+        font-size: 30px;
+        color: #f60000;
+    }
+
+    .price_sale {
+        width: 388px;
+    }
+</style>
+<ul style="margin-left: 105px" class="b-crumbs">
+    <li>
+        <a href="/">
+            Trang Chủ
+        </a>
+    </li>
+    <li>
+        <span>Chi tiết sản phẩm</span>
+    </li>
+</ul>
+<section class="container">
     <div class="chitietSanpham" style="min-height: 85vh">
         <h1>{{ $product -> name }} </h1>
         <div class="prod-wrap">
@@ -84,37 +85,37 @@
                     </div>
                 </div>
                 <div class="prod-cont">
-                     <div class="prod-skuwrap">
-                    <p class="prod-skuttl">Chọn màu</p>
-                    <ul class="prod-skucolor">
-                        <li class="active">
-                            <img src="fontend/img/color/blue.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="fontend/img/color/red.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="fontend/img/color/green.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="fontend/img/color/yellow.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="fontend/img/color/purple.jpg" alt="">
-                        </li>
-                    </ul>
-                         <p class="prod-skuttl">Bộ Nhớ</p>
-                         <div class="offer-props-select">
-                             <p>Chọn</p>
-                             <ul>
-                                 <li><a>3-32GB</a></li>
-                                 <li><a>4-64GB</a></li>
-                                 <li><a>6-128GB</a></li>
-                                 <li><a>8-128GB</a></li>
-                             </ul>
-                         </div>
+                    <div class="prod-skuwrap">
+                        <p class="prod-skuttl">Chọn màu</p>
+                        <ul class="prod-skucolor">
+                            <li class="active">
+                                <img src="fontend/img/color/blue.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="fontend/img/color/red.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="fontend/img/color/green.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="fontend/img/color/yellow.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="fontend/img/color/purple.jpg" alt="">
+                            </li>
+                        </ul>
+                        <p class="prod-skuttl">Bộ Nhớ</p>
+                        <div class="offer-props-select">
+                            <p>Chọn</p>
+                            <ul>
+                                <li><a>3-32GB</a></li>
+                                <li><a>4-64GB</a></li>
+                                <li><a>6-128GB</a></li>
+                                <li><a>8-128GB</a></li>
+                            </ul>
+                        </div>
 
-                </div>
+                    </div>
                     <div class="prod-info">
                         <div class="area_order">
                             <!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
@@ -133,69 +134,69 @@
             <div class="prod-related-car" id="prod-related-car">
                 <ul class="slides">
                     @foreach($relatedProducts as $item)
-                        <li class="prod-rel-wrap">
-                            @foreach($relatedProducts as $item)
-                                <div class="prod-rel">
-                                    <a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}" class="prod-rel-img">
-                                        <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
-                                    </a>
-                                    <div class="prod-rel-cont">
-                                        <h3><a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}">{{ $item->name }}</a></h3>
-                                        <p class="prod-rel-price">
-                                            <b>{{ number_format($item->sale,0,",",".") }} đ</b>
-                                        </p>
-                                        <div class="prod-rel-actions">
-                                            <a title="Wishlist" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                            <a title="Compare" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                            <p class="prod-i-addwrap">
-                                                <a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
+                    <li class="prod-rel-wrap">
+                        @foreach($relatedProducts as $item)
+                        <div class="prod-rel">
+                            <a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}" class="prod-rel-img">
+                                <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                            </a>
+                            <div class="prod-rel-cont">
+                                <h3><a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}">{{ $item->name }}</a></h3>
+                                <p class="prod-rel-price">
+                                    <b>{{ number_format($item->sale,0,",",".") }} đ</b>
+                                </p>
+                                <div class="prod-rel-actions">
+                                    <a title="Wishlist" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
+                                    <a title="Compare" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
+                                    <p class="prod-i-addwrap">
+                                        <a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
+                                    </p>
                                 </div>
-                            @endforeach
-                        </li>
+                            </div>
+                        </div>
+                        @endforeach
+                    </li>
                     @endforeach
                 </ul>
             </div>
         </div>
 
 
-{{--        san pham da xem --}}
+        {{-- san pham da xem --}}
         <div class="prod-related">
             <h2><span>Sản Phẩm Đã Xem</span></h2>
             <div class="prod-related-car" id="prod-related-car">
                 <ul class="slides">
                     @foreach($viewedProducts as $item)
-                        <li class="prod-rel-wrap">
-                            @foreach($viewedProducts as $item)
-                                <div class="prod-rel">
-                                    <a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}" class="prod-rel-img">
-                                        <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
-                                    </a>
-                                    <div class="prod-rel-cont">
-                                        <h3><a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}">{{ $item->name }}</a></h3>
-                                        <p class="prod-rel-price">
-                                            <b>{{ number_format($item->sale,0,",",".") }} đ</b>
-                                        </p>
-                                        <div class="prod-rel-actions">
-                                            <a title="Wishlist" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                            <a title="Compare" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                            <p class="prod-i-addwrap">
-                                                <a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
+                    <li class="prod-rel-wrap">
+                        @foreach($viewedProducts as $item)
+                        <div class="prod-rel">
+                            <a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}" class="prod-rel-img">
+                                <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                            </a>
+                            <div class="prod-rel-cont">
+                                <h3><a href="{{ route('shop.detailProduct',['slug' => $product->slug]) }}">{{ $item->name }}</a></h3>
+                                <p class="prod-rel-price">
+                                    <b>{{ number_format($item->sale,0,",",".") }} đ</b>
+                                </p>
+                                <div class="prod-rel-actions">
+                                    <a title="Wishlist" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
+                                    <a title="Compare" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
+                                    <p class="prod-i-addwrap">
+                                        <a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
+                                    </p>
                                 </div>
-                            @endforeach
-                        </li>
+                            </div>
+                        </div>
+                        @endforeach
+                    </li>
                     @endforeach
                 </ul>
             </div>
         </div>
 
 
-{{--        --}}
+        {{-- --}}
         <div class="prod-tabs-wrap">
             <ul class="prod-tabs">
                 <li><a data-prodtab-num="1" class="active" href="#" data-prodtab="#prod-tab-1">Mô tả</a></li>
@@ -208,60 +209,60 @@
 
                 <p data-prodtab-num="1" class="prod-tab-mob active" data-prodtab="#prod-tab-1">Mô tả</p>
                 <div class="prod-tab stylization" id="prod-tab-1">
-                    <p  {!! $product->description !!}</p>
+                    <p {!! $product->description !!}</p>
                 </div>
                 <p data-prodtab-num="2" class="prod-tab-mob" data-prodtab="#prod-tab-2">Features</p>
                 <div class="prod-tab prod-props" id="prod-tab-2">
                     <table>
                         <tbody>
-                        <tr>
-                            <td>SKU</td>
-                            <td>05464207</td>
-                        </tr>
-                        <tr>
-                            <td>Material</td>
-                            <td>Nylon</td>
-                        </tr>
-                        <tr>
-                            <td>Pattern Type</td>
-                            <td>Solid</td>
-                        </tr>
-                        <tr>
-                            <td>Wash</td>
-                            <td>Colored</td>
-                        </tr>
-                        <tr>
-                            <td> Style </td>
-                            <td> Sport </td>
-                        </tr>
-                        <tr>
-                            <td> Color </td>
-                            <td> Blue </td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td>Unisex</td>
-                        </tr>
-                        <tr>
-                            <td> Rain Cover</td>
-                            <td> No</td>
-                        </tr>
-                        <tr>
-                            <td>Exterior</td>
-                            <td>Solid Bag</td>
-                        </tr>
-                        <tr>
-                            <td>Closure Type</td>
-                            <td>Zipper</td>
-                        </tr>
-                        <tr>
-                            <td>Handle/Strap Type</td>
-                            <td>Soft Handle</td>
-                        </tr>
-                        <tr>
-                            <td>Size</td>
-                            <td>33cm x 18cm x 48cm</td>
-                        </tr>
+                            <tr>
+                                <td>SKU</td>
+                                <td>05464207</td>
+                            </tr>
+                            <tr>
+                                <td>Material</td>
+                                <td>Nylon</td>
+                            </tr>
+                            <tr>
+                                <td>Pattern Type</td>
+                                <td>Solid</td>
+                            </tr>
+                            <tr>
+                                <td>Wash</td>
+                                <td>Colored</td>
+                            </tr>
+                            <tr>
+                                <td> Style </td>
+                                <td> Sport </td>
+                            </tr>
+                            <tr>
+                                <td> Color </td>
+                                <td> Blue </td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>Unisex</td>
+                            </tr>
+                            <tr>
+                                <td> Rain Cover</td>
+                                <td> No</td>
+                            </tr>
+                            <tr>
+                                <td>Exterior</td>
+                                <td>Solid Bag</td>
+                            </tr>
+                            <tr>
+                                <td>Closure Type</td>
+                                <td>Zipper</td>
+                            </tr>
+                            <tr>
+                                <td>Handle/Strap Type</td>
+                                <td>Soft Handle</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>33cm x 18cm x 48cm</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -418,19 +419,19 @@
         <div class="guiBinhLuan">
             <div class="stars">
                 <form action="">
-                    <input class="star star-5" id="star-5" value="5" type="radio" name="star"/>
+                    <input class="star star-5" id="star-5" value="5" type="radio" name="star" />
                     <label class="star star-5" for="star-5" title="Tuyệt vời"></label>
 
-                    <input class="star star-4" id="star-4" value="4" type="radio" name="star"/>
+                    <input class="star star-4" id="star-4" value="4" type="radio" name="star" />
                     <label class="star star-4" for="star-4" title="Tốt"></label>
 
-                    <input class="star star-3" id="star-3" value="3" type="radio" name="star"/>
+                    <input class="star star-3" id="star-3" value="3" type="radio" name="star" />
                     <label class="star star-3" for="star-3" title="Tạm"></label>
 
-                    <input class="star star-2" id="star-2" value="2" type="radio" name="star"/>
+                    <input class="star star-2" id="star-2" value="2" type="radio" name="star" />
                     <label class="star star-2" for="star-2" title="Khá"></label>
 
-                    <input class="star star-1" id="star-1" value="1" type="radio" name="star"/>
+                    <input class="star star-1" id="star-1" value="1" type="radio" name="star" />
                     <label class="star star-1" for="star-1" title="Tệ"></label>
                 </form>
             </div>
@@ -442,5 +443,5 @@
     </div>
 
 
-    </section>
+</section>
 @endsection
