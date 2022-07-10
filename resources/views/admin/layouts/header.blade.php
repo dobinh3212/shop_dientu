@@ -1,9 +1,6 @@
-
-
-
-     <header class="main-header">
+<header class="main-header">
     <!-- Logo -->
-    <a href="http://http://127.0.0.1:8000/.com/admin/category" class="logo">
+    <a href="http://127.0.0.1:8000/admin/category" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>ADMIN</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -32,7 +29,8 @@
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
-                                <li><!-- start message -->
+                                <li>
+                                    <!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
                                             <img src="/backend/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -152,7 +150,8 @@
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
-                                <li><!-- Task item -->
+                                <li>
+                                    <!-- Task item -->
                                     <a href="#">
                                         <h3>
                                             Design some buttons
@@ -166,7 +165,8 @@
                                     </a>
                                 </li>
                                 <!-- end task item -->
-                                <li><!-- Task item -->
+                                <li>
+                                    <!-- Task item -->
                                     <a href="#">
                                         <h3>
                                             Create a nice theme
@@ -180,7 +180,8 @@
                                     </a>
                                 </li>
                                 <!-- end task item -->
-                                <li><!-- Task item -->
+                                <li>
+                                    <!-- Task item -->
                                     <a href="#">
                                         <h3>
                                             Some task I need to do
@@ -194,7 +195,8 @@
                                     </a>
                                 </li>
                                 <!-- end task item -->
-                                <li><!-- Task item -->
+                                <li>
+                                    <!-- Task item -->
                                     <a href="#">
                                         <h3>
                                             Make beautiful transitions
@@ -225,7 +227,7 @@
                         <span class="hidden-xs">
 
                             @if(Auth::check())
-                                {{Auth::user()->name}}
+                            {{Auth::user()->name}}
                             @endif
                         </span>
 
@@ -237,7 +239,7 @@
 
                             <p>
                                 @if(Auth::check())
-                                    {{Auth::user()->name}}
+                                {{Auth::user()->name}}
                                 @endif
                                 <small>01/01/2000</small>
                             </p>
