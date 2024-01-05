@@ -44,7 +44,7 @@
 
                 <!-- Catalog menu - start -->
                 <div class="topcatalog">
-                    <a class="topcatalog-btn">Danh Mục SẢN PHẨM</a>
+                    <a style="width: 215px;" class="topcatalog-btn">Danh Mục SẢN PHẨM</a>
                     <ul class="topcatalog-list">
                         @if(!empty($categories))
                         @foreach($categories as $category)
@@ -77,12 +77,12 @@
                 <button type="button" class="mainmenu-btn">Menu</button>
 
                 <ul class="mainmenu">
-                    <li><a href="./" class="">Trang Chủ</a></li>
-                    <li><a href="./" class="">Công Nghệ</a></li>
-                    <li><a href="http://127.0.0.1:8000/tin-tuc" class="">Tin Tức</a></li>
-                    <li><a href="./" class="">Hỏi Đáp</a></li>
-                    <li><a href="./" class="">Giới Thiệu</a></li>
-                    <li><a href="http://127.0.0.1:8000/lien-he" class="">Liên Hệ</a></li>
+                    <li><a href="#" class="">Trang Chủ</a></li>
+                    <li><a href="#" class="">Công Nghệ</a></li>
+                    <li><a href="#" class="">Tin Tức</a></li>
+                    <li><a href="#" class="">Hỏi Đáp</a></li>
+                    <li><a href="#" class="">Giới Thiệu</a></li>
+                    <li><a href="#" class="">Liên Hệ</a></li>
                     {{-- @if(!empty($categories))--}}
                     {{-- @foreach($categories as $category)--}}
                     {{-- @if($category->parent_id == 0)--}}
