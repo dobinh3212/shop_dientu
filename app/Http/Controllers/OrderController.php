@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
-use App\OrderStatus;
+use App\OrderStatu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -64,7 +64,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
-        $order_status = OrderStatus::all();
+        $order_status = OrderStatu::all();
 
         return view('admin.order.edit', [
             'order' => $order,
