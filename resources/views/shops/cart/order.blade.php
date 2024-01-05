@@ -46,46 +46,33 @@
                                             <label>Địa Chỉ Nhận Hàng
                                             </label>
                                             <textarea cols="5" rows="2" placeholder="Nhập địa chỉ" id="order_comments" class="input-text " name="address"></textarea>
-
                                         </p>
-
                                     </div>
                                     <a href="{{ route('shop.cancelCart') }}" type="button" class="btn btn-danger">Hủy đơn hàng</a>
                                 </div>
-
                                 <div class="col-2">
                                     <div class="woocommerce-shipping-fields">
                                         <div class="shipping_address" style="display: block;">
-
                                             <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
                                                 <label>Email
                                                 </label>
                                                 <input type="text" value="" placeholder="Nhập email" id="contactEmail" name="email" class="input-text ">
                                             </p>
-
                                             <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
                                                 <label>Điện Thoại
                                                 </label>
                                                 <input type="text" value="" placeholder=" Nhập số điện thoại" id="billing_phone" name="phone" class="input-text ">
                                             </p>
-
-
                                         </div>
                                         <p id="order_comments_field" class="form-row notes">
                                             <label class="" for="order_comments">Ghi chú đơn hàng</label>
                                             <textarea cols="5" rows="2" placeholder="" id="order_comments" class="input-text " name="note"></textarea>
                                         </p>
                                         <button type="submit" class=" btn btn-success">Gửi đơn hàng </button>
-
                                     </div>
-
-
                                 </div>
-
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
