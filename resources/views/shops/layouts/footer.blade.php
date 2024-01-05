@@ -34,9 +34,9 @@
             <div>
                 <ul class="w3_footer_grid_list1">
 
-                    <li><div >{{ $settings -> summary }}</div></li>
+                    <li><div >{{ $settings -> summary ?? '' }}</div></li>
 
-                    <li><a href="{{ $settings -> introduce }}" >{{ $settings -> introduce }}</a></li>
+                    <li><a href="{{ $settings -> introduce ?? '' }}" >{{ $settings -> introduce ?? '' }}</a></li>
                 </ul>
             </div>
 
@@ -66,9 +66,9 @@
             <div class="col-md-3 w3_footer_grid" >
                 <div>
                     <ul class="w3_footer_grid_list1">
-                        <li><a href="#" class="instagram"><i class="fa fa-home" aria-hidden="true">  {{ $settings -> address}}</i></a></li>
-                        <li><a href="#" class="instagram"><i class="fa fa-envelope" aria-hidden="true">   {{ $settings -> email }}</i></a></li>
-                        <li><a href="#" class="instagram"><i class="fa fa-phone" aria-hidden="true">   {{ $settings -> hotline}}</i></a></li>
+                        <li><a href="#" class="instagram"><i class="fa fa-home" aria-hidden="true">  {{ $settings -> address ?? ''}}</i></a></li>
+                        <li><a href="#" class="instagram"><i class="fa fa-envelope" aria-hidden="true">   {{ $settings -> email ?? '' }}</i></a></li>
+                        <li><a href="#" class="instagram"><i class="fa fa-phone" aria-hidden="true">   {{ $settings -> hotline ?? ''}}</i></a></li>
 
                     </ul>
                 </div>
