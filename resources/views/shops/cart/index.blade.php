@@ -12,19 +12,18 @@
     }
 </style>
 
-<ul style="margin-left: 105px" class="b-crumbs">
-    <li>
-        <a href="/">
-            Trang Chủ
-        </a>
-    </li>
-    <li>
-        <span>Giỏ Hàng</span>
-    </li>
-</ul>
 {{--<div class="single-product-area">--}}
 <div class="container">
-
+    <ul class="b-crumbs">
+        <li>
+            <a href="/">
+                Trang Chủ
+            </a>
+        </li>
+        <li>
+            <span>Giỏ hàng</span>
+        </li>
+    </ul>
     @if(count($listProducts))
 
     <h3 class="component-ttl"><span>GIỎ HÀNG</span></h3>

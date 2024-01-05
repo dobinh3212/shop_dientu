@@ -12,17 +12,17 @@
         width: 388px;
     }
 </style>
-<ul style="margin-left: 105px" class="b-crumbs">
-    <li>
-        <a href="/">
-            Trang Chủ
-        </a>
-    </li>
-    <li>
-        <span>Chi tiết sản phẩm</span>
-    </li>
-</ul>
 <section class="container">
+    <ul class="b-crumbs">
+        <li>
+            <a href="/">
+                Trang Chủ
+            </a>
+        </li>
+        <li>
+            <span>Chi tiết sản phẩm</span>
+        </li>
+    </ul>
     <div class="chitietSanpham" style="min-height: 85vh">
         <h1>{{ $product -> name }} </h1>
         <div class="prod-wrap">
