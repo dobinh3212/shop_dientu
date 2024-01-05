@@ -9,7 +9,7 @@
     <title>Điện Tử</title>
     <link rel="icon" href="fontend/img3/logo.png"  type="image/gif"> 
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700ii%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic" rel="stylesheet">
-    <!-- <base href="{{asset("dovanbinh.com")}}" /> -->
+    <base href="{{asset("/")}}" />
 
     <link rel="stylesheet" href="fontend/css/font-awesome.min.css">
     <link rel="stylesheet" href="fontend/css/bootstrap.min.css">
