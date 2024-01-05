@@ -46,7 +46,7 @@
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng Nhập</button>
                 <p class="fs">Quên <a href="#">Tên Người Dùng</a> / <a href="#">Mật Khẩu</a> ? </p>
-                <p class="ss">Không Có Tài Khoản? <a href="">Đăng Ký</a></p>
+                <p class="ss">Không Có Tài Khoản? <a href="#">Đăng Ký</a></p>
             </div>
             <!-- /.col -->
         </div>

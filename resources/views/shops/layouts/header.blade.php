@@ -16,14 +16,14 @@
                             <i class="fa fa-lock"></i>
                             <span class="shop-menu-ttl">Đăng Ký</span>
                         </a>
-                        <a href="http://http://127.0.0.1:8000/admin/login">
+                        <a href="http://127.0.0.1:8000/admin/login">
                             <span class="shop-menu-ttl">Đăng Nhập</span>
                         </a>
                     </li>
 
                     <li>
                         <div class="h-cart">
-                            <a href="http://http://127.0.0.1:8000/gio-hang">
+                            <a href="http://127.0.0.1:8000/gio-hang">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="shop-menu-ttl">Giỏ Hàng</span>
                                 {{-- (<b>0</b>)--}}

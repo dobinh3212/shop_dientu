@@ -19,7 +19,7 @@ class VendorController extends Controller
         
         $listVendor = Vendor::latest()->paginate(10); // sắp sếp theo thứ tự mới nhất && phân trang
 
-        return view('admin.Vendor.index',[
+        return view('admin.vendor.index',[
             'data' => $listVendor,
             'vendors' => $vendors
         ]);

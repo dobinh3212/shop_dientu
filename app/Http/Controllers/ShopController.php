@@ -23,7 +23,7 @@ class ShopController extends Controller
         // 1. Lấy dữ liệu - Danh mục, có trạng thái là hiển thị
         $categories = Category::where([
             'is_active' => 1,
-            'type' => 1,//lấy danh mục sản phẩm
+            // 'type' => 1,//lấy danh mục sản phẩm
              ])->get();// bao gồm cả menu cha và con
         $this->categories = $categories;
 
@@ -31,11 +31,11 @@ class ShopController extends Controller
         $banners = Banner::where('is_active', 1)->orderBy('id', 'desc')
             ->orderBy('position', 'asc')->get();
 //        // 3. lấy dữ liệu 4 tin tức mới nhất
-//        $articles = Article::where('is_active', 1)
-//            ->orderBy('id', 'desc')
-//            ->orderBy('position', 'asc')
-//            ->take(4)
-//            ->get();
+       $articles = Articles::where('is_active', 1)
+           ->orderBy('id', 'desc')
+           ->orderBy('position', 'asc')
+           ->take(4)
+           ->get();
 
         // 4. cấu hình website
         $settings = Setting::first();
@@ -49,14 +49,13 @@ class ShopController extends Controller
             'categories' => $categories,
             'banners' => $banners,
             'vendors' => $vendors,
-//            'articles' => $articles
+            'articles' => $articles
         ]);
     }
 
     //Trang chủ
     public function index()
     {
-
         $list = []; // chứa danh sách sản phẩm  theo danh mục
 
         foreach($this->categories as $key => $parent) {
@@ -69,8 +68,7 @@ class ShopController extends Controller
                     if ($child->parent_id == $parent->id) {
                         $ids[] = $child->id; // thêm phần tử vào mảng
                     }
-                } // ids = [1,7,8,9,..]
-
+                }
                 $list[$key]['category'] = $parent; // điện thoại, tablet
 
                 // SELECT * FROM `products` WHERE is_active = 1 AND is_hot = 0 AND category_id IN (1,7,9,11) ORDER BY id DESC LIMIT 10
@@ -79,18 +77,11 @@ class ShopController extends Controller
                     ->limit(8)
                     ->orderBy('id', 'desc')
                     ->get();
-
-
             }
         }
 
-//         2. Lấy dữ liệu - Banner
-//        $banners = Banner::where('is_active', 1)->orderBy('id', 'desc')
-//            ->orderBy('position', 'asc')->get();
-
         return view('shops.index',[
             'list' => $list,
-            //'banners' => $banners,
         ]);
     }
 
@@ -133,32 +124,23 @@ class ShopController extends Controller
     //Trang chi tiết sản phẩm
     public function detailProduct($slug=null)
     {
-
-
-
         $product = Product::where([ 'slug' => $slug, 'is_active' => 1])->firstOrFail();
-
-// khai báo mảng chứa danh sách các sản phẩm đã xem
+        // khai báo mảng chứa danh sách các sản phẩm đã xem
         $viewedProducts = [];
-
-// xử lý lưu tin đã xem
+        // xử lý lưu tin đã xem
         if (isset($_COOKIE['list_product_viewed'])) {
             $list_products_viewed = $_COOKIE['list_product_viewed']; // list id sản phẩm
             $list_products_viewed = json_decode($list_products_viewed); // chuyển chuỗi list id=> mảng
-
             // kiểm tra nếu chưa tồn tại trong list đã xem ??
             if (!in_array($product->id, $list_products_viewed)) {
                 $list_products_viewed[] = $product->id;  // thêm id tiếp theo vào mảng đã xem
-
                 // 44 , 9, 10 ,13, 67, 99 ,89, 70, 71
                 // lấy ra 4 cái id mới nhất
                 $list_products_viewed = array_slice($list_products_viewed,-4,4);
-
                 // danh sách bị thay đổi => nạp lại giá trị cho key
                 $_list = json_encode($list_products_viewed);
                 setcookie('list_product_viewed', $_list , time() + (7*86400));
             }
-
             // lấy ra danh sách sách sản phẩm đã xem từ mảng : $list_products_viewed
             $viewedProducts = Product::where([
                 ['is_active' , '=', 1],
@@ -166,17 +148,12 @@ class ShopController extends Controller
             ])->whereIn('id' , $list_products_viewed)
                 ->take(5)
                 ->get();
-
-//            dd($viewedProducts);
-
-
         } else {
             // lưu id sẩn phẩm đã xem lần đầu vào cookie
             $arr_product_id = [$product->id];
             $arr_product_id = json_encode($arr_product_id); // { "ten" : "gia tri"  }
             setcookie('list_product_viewed', $arr_product_id , time() + (7*86400));
         }
-
         // lấy ra những sản phẩm liên quan
         // 1. lấy những sản phẩm cùng danh mục
         // 2. loại trừ cái đang xem
@@ -221,16 +198,9 @@ class ShopController extends Controller
         );
     }
 
-
     // thêm dữ liệu khách hàng liên hệ vào bảng contact
     public function postContact(Request $request)
     {
-//        //validate
-//        $request->validate([
-//            'name' => 'required|max:255',
-//            'email' => 'required|email'
-//        ]);
-
         //luu vào csdl
         $contact = new Contact();
         $contact->name = $request->input('name');
@@ -247,16 +217,11 @@ class ShopController extends Controller
     public function addToCart($id)
     {
         $product = Product::findOrFail($id);
-
         // thông tin sẽ lưu vào giỏ
-
         // gọi đến thư viện thêm sản phẩm vào giỏ hàng
         Cart::add(
             ['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->sale,'tax' => 0, 'priceTax' => 0, 'options' => ['tax' => 0 , 'priceTax' => 0, 'image' => $product->image]]
         );
-
-        //session(['totalItem' => Cart::count()]);
-
         // chuyển về trang danh sách sản phảm trong giỏ hàng
         return redirect()->route('shop.cart');
     }
@@ -359,7 +324,6 @@ class ShopController extends Controller
 
             foreach ($listProducts as $product)
             {
-                //dd($product);
                 $_detail = new OrderProduct();
                 $_detail->order_id = $id_order;
                 $_detail->name = $product->name;
