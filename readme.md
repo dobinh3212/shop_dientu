@@ -4,7 +4,7 @@
 #### Truy cập container
 - `docker exec -it ... bash`
 
-#### mport file sql webshop.sql
+#### Import file sql webshop.sql
 - `mysql -u root -p -h db web_xekhach < webshop.sql`
 
 ### Cách kết nối phpMyAdmin
