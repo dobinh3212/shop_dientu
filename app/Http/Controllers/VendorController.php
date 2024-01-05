@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\vendor;
+use App\Vendor;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -16,9 +16,7 @@ class VendorController extends Controller
     public function index()
     {
         $vendors  = Vendor::all(); // lấy toàn bộ dữ liệu
-//        echo'<pre>';
-//        print_r($vendors);
-//        die;
+        
         $listVendor = Vendor::latest()->paginate(10); // sắp sếp theo thứ tự mới nhất && phân trang
 
         return view('admin.Vendor.index',[
