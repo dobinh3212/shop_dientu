@@ -26,11 +26,6 @@ Route::get('/danh-muc-san-pham/{slug}', 'ShopController@listProducts')->name('sh
 // Trang chi tiết sản phẩm
 Route::get('/chi-tiet-san-pham/{slug}', 'ShopController@detailProduct')->name('shop.detailProduct');
 
-// Trang danh sach tin tuc
-Route::get('/tin-tuc', 'ShopController@listArticles')->name('shop.listArticles');
-
-// Trang chi tiet tin tuc
-Route::get('/chi-tiet-tin-tuc/{slug}', 'ShopController@detailArticle')->name('shop.detailArticle');
 //dat hang
 Route::get('/them-san-pham-vao-gio/{id}', 'ShopController@addToCart')->name('shop.addToCart');
 // man hinh danh sach san pham
@@ -72,8 +67,5 @@ Route::group(['prefix' => 'admin','as' => 'admin.','middleware' => 'checkLogin']
     Route::resource('product', 'ProductController');
     Route::resource('user', 'UserController');
     Route::resource('setting', 'SettingController');
-    // QL bài viết
-    Route::resource('article', 'ArticleController');
-
     Route::resource('order', 'OrderController');
 });

@@ -9,7 +9,6 @@ use App\Order;
 use App\OrderProduct;
 use App\Product;
 use App\Setting;
-use App\Articles;
 use App\Vendor;
 use Illuminate\Http\Request;
 use Cart;
@@ -30,12 +29,6 @@ class ShopController extends Controller
         // 2. Lấy dữ liệu - Banner
         $banners = Banner::where('is_active', 1)->orderBy('id', 'desc')
             ->orderBy('position', 'asc')->get();
-//        // 3. lấy dữ liệu 4 tin tức mới nhất
-       $articles = Articles::where('is_active', 1)
-           ->orderBy('id', 'desc')
-           ->orderBy('position', 'asc')
-           ->take(4)
-           ->get();
 
         // 4. cấu hình website
         $settings = Setting::first();
@@ -49,7 +42,6 @@ class ShopController extends Controller
             'categories' => $categories,
             'banners' => $banners,
             'vendors' => $vendors,
-            'articles' => $articles
         ]);
     }
 
@@ -174,30 +166,7 @@ class ShopController extends Controller
         ]);
 
     }
-
-
-    //Trang Tin Tức
-    public function listArticles()
-    {
-        $articles = Articles::where(['is_active' => 1 ])->get();
-
-        return view('shops.list-articles',[
-            "articles" => $articles
-        ]);
-
-    }
-    //Trang chi tiết tin tức
-    public function detailArticle($slug)
-    {
-        $article = Articles::where(['slug' => $slug, 'is_active' => 1])->firstOrFail();
-
-        return view('shops.detail-article',
-            [
-                'article' => $article
-            ]
-        );
-    }
-
+    
     // thêm dữ liệu khách hàng liên hệ vào bảng contact
     public function postContact(Request $request)
     {

@@ -37,7 +37,6 @@
             <li><a href="http://127.0.0.1:8000/admin/product"><i class="fa fa-database"></i> <span>QL SẢN PHẨM</span></a></li>
             <li><a href="http://127.0.0.1:8000/admin/banner"><i class="fa fa-photo"></i> <span>QL Banner</span></a></li>
             <li><a href="http://127.0.0.1:8000/admin/user"><i class="fa fa-database"></i> <span>QL Người Dùng</span></a></li>
-            <li><a href="http://127.0.0.1:8000/admin/article"><i class="fa fa-database"></i> <span>QL Tin Tức</span></a></li>
             <li><a href="http://127.0.0.1:8000/admin/setting"><i class="fa fa-photo"></i> <span>Cấu Hình Website</span></a></li>
             <li><a href="http://127.0.0.1:8000/admin/order"><i class="fa fa-database"></i> <span>QL Đơn Hàng</span></a></li>
 
