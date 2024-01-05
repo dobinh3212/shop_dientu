@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jan 05, 2024 at 07:47 AM
+-- Generation Time: Jan 05, 2024 at 08:57 AM
 -- Server version: 5.7.43
 -- PHP Version: 8.2.8
 
@@ -294,15 +294,16 @@ INSERT INTO `orders` (`id`, `code`, `fullname`, `email`, `address`, `address2`, 
 (15, 'DH-15-26052020', 'HCDUNG', 'hcdung2109@gmail.com', 'Tầng 6, Tòa CT Building , Đống Đa , HN', NULL, '0986346008', 0, 'Giao hàng ngoài 17h', NULL, 7990000, 0, 2, 0, '2020-05-25 23:59:42', '2020-05-26 00:05:38'),
 (16, 'DH--21082020-1598017675', 'dung', 'hcdung2109@gmail.com', 'HN', NULL, '098793332', 50000, 'N', 'SHOP-KM1', -67400000, 0, 1, 0, '2020-08-21 06:47:55', '2020-08-21 06:47:55'),
 (17, 'DH-21082020-1598018495', 'dung', 'admin@gmail.com', 'HN', NULL, '0986468888', 0, 'dag giao hang', NULL, 15980000, 0, 3, 0, '2020-08-21 07:01:35', '2020-08-21 07:07:35'),
-(18, NULL, 'do van binh', 'hieuvv@bap.jp', 'tesst', NULL, '099999999', 0, 'tesst', '0', 15980000, 0, 1, 0, '2024-01-05 06:48:18', '2024-01-05 06:48:18');
+(18, NULL, 'do van binh', 'hieuvv@bap.jp', 'tesst', NULL, '099999999', 0, 'tesst', '0', 15980000, 0, 4, 0, '2024-01-05 06:48:18', '2024-01-05 08:32:58'),
+(19, NULL, 'do van binh', 'admin2@gmail.com', 'tesdf', NULL, '0999999999999', 0, '76876876', '0', 48000000, 0, 4, 0, '2024-01-05 08:47:36', '2024-01-05 08:47:58');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_detail`
+-- Table structure for table `order_products`
 --
 
-CREATE TABLE `order_detail` (
+CREATE TABLE `order_products` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -315,10 +316,10 @@ CREATE TABLE `order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order_detail`
+-- Dumping data for table `order_products`
 --
 
-INSERT INTO `order_detail` (`id`, `name`, `image`, `sku`, `user_id`, `order_id`, `product_id`, `price`, `qty`) VALUES
+INSERT INTO `order_products` (`id`, `name`, `image`, `sku`, `user_id`, `order_id`, `product_id`, `price`, `qty`) VALUES
 (2, NULL, NULL, '', NULL, 9, 43, 17980000, 2),
 (3, NULL, NULL, '', NULL, 9, 30, 7990000, 1),
 (4, NULL, NULL, '', NULL, 10, 30, 7990000, 1),
@@ -330,7 +331,8 @@ INSERT INTO `order_detail` (`id`, `name`, `image`, `sku`, `user_id`, `order_id`,
 (10, 'Iphone 7 Plus 32GB - NEW', 'uploads/product/1584949065_iphone-7-plus-gold-400x460-400x460.png', NULL, 0, 15, 30, 7990000, 1),
 (11, 'Iphone 7 Plus 32GB - NEW', 'uploads/product/1584949065_iphone-7-plus-gold-400x460-400x460.png', NULL, 0, 16, 30, 47940000, 6),
 (12, 'ASUS ROG Phone 2 512GB', 'uploads/product/1584948535__600x600__crop_600_asus_rog_phone2_min_1.jpg', NULL, 0, 16, 28, 20490000, 1),
-(13, 'Oppo Reno 2F', 'uploads/product/1584946658_oppo-reno2-f-400x460.png', NULL, 0, 17, 12, 15980000, 2);
+(13, 'Oppo Reno 2F', 'uploads/product/1584946658_oppo-reno2-f-400x460.png', NULL, 0, 17, 12, 15980000, 2),
+(14, 'Asus VivoBook X409FA i5 8265U', 'uploads/product/1586667310_asus-vivobook-x409f-i5-8265u-8gb-1tb-win10-ek138t2-1-thumb-1-400x400.jpg', NULL, NULL, 19, 48, 12000000, 4);
 
 -- --------------------------------------------------------
 
@@ -623,9 +625,9 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order_detail`
+-- Indexes for table `order_products`
 --
-ALTER TABLE `order_detail`
+ALTER TABLE `order_products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -731,13 +733,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `order_detail`
+-- AUTO_INCREMENT for table `order_products`
 --
-ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `order_products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `order_status`
