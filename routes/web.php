@@ -14,10 +14,6 @@
 //Trang Chủ
 Route::get('/', 'ShopController@index' );
 
-// Trang liên hệ
-Route::get('/lien-he', 'ShopController@contact');
-Route::post('/postContact', 'ShopController@postContact')->name('shop.postContact');
-
 //tìm kiếm
 Route::get('/tim-kiem', 'ShopController@search')->name('shop.search');
 // Trang danh mục

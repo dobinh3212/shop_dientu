@@ -77,13 +77,6 @@ class ShopController extends Controller
         ]);
     }
 
-
-    //Trang liên hệ
-    public function contact()
-    {
-        return view('shops.contact');
-    }
-
     //Trang danh sách sản phẩm
     public function listProducts($slug)
     {
@@ -165,21 +158,6 @@ class ShopController extends Controller
             'viewedProducts' => $viewedProducts
         ]);
 
-    }
-    
-    // thêm dữ liệu khách hàng liên hệ vào bảng contact
-    public function postContact(Request $request)
-    {
-        //luu vào csdl
-        $contact = new Contact();
-        $contact->name = $request->input('name');
-        $contact->phone = $request->input('phone');
-        $contact->email = $request->input('email');
-        $contact->content = $request->input('content');
-        $contact->save();
-
-        // chuyển về trang chủ
-        return redirect('/');
     }
 
     //thêm sản phẩm vào giỏ hàng
