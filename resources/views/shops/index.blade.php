@@ -6,7 +6,7 @@
     }
     .product-f-image {
         position: relative;
-        height: 243px;
+        /* height: 243px; */
     }
 
     /*.product-carousel-price{*/
