@@ -85,7 +85,7 @@ class CategoryController extends Controller
         // bước 3 : chuyển về trang danh sách
         // header('Location: http://mvc.local:8888/?method=danhsach&controller=user');
 
-        return redirect()->route('admin.admin.category.index');
+        return redirect()->route('admin.category.index');
 
     }
 
